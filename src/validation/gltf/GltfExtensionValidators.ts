@@ -3,6 +3,7 @@ import { ValidationContext } from "../ValidationContext";
 import { ExtInstanceFeaturesValidator } from "./instanceFeatures/ExtInstanceFeaturesValidator";
 import { ExtMeshFeaturesValidator } from "./meshFeatures/ExtMeshFeaturesValidator";
 import { ExtStructuralMetadataValidator } from "./structuralMetadata/ExtStructuralMetadataValidator";
+import { MaxarMeshVariantsValidator } from "./meshVariants/MaxarMeshVariantsValidator";
 
 import { GltfDataReader } from "./GltfDataReader";
 import { NgaGpmLocalValidator } from "./gpmLocal/NgaGpmLocalValidator";
@@ -72,6 +73,13 @@ export class GltfExtensionValidators {
       context
     );
     if (!ngaGpmLocalValid) {
+      result = false;
+    }
+
+    // Validate `MAXAR_mesh_variants`
+    const maxarMeshVariantsValid =
+      await MaxarMeshVariantsValidator.validateGltf(path, gltfData, context);
+    if (!maxarMeshVariantsValid) {
       result = false;
     }
 
