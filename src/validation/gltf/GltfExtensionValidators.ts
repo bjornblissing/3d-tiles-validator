@@ -9,6 +9,7 @@ import { GltfDataReader } from "./GltfDataReader";
 import { NgaGpmLocalValidator } from "./gpmLocal/NgaGpmLocalValidator";
 import { MaxarImageOrthoValidator } from "./imageOrtho/MaxarImageOrthoValidator";
 import { KhrLightsPunctualValidator } from "./lightsPunctual/KhrLightsPunctualValidator";
+import { KhrTextureBasisuValidator } from "./textureBasisu/KhrTextureBasisuValidator";
 
 /**
  * A class that only serves as an entry point for validating
@@ -103,6 +104,16 @@ export class GltfExtensionValidators {
         context
       );
     if (!maxarNonvisualGeometryValid) {
+      result = false;
+    }
+
+    // Validate `KHR_texture_basisu`
+    const khrTextureBasisuValid = await KhrTextureBasisuValidator.validateGltf(
+      path,
+      gltfData,
+      context
+    );
+    if (!khrTextureBasisuValid) {
       result = false;
     }
 

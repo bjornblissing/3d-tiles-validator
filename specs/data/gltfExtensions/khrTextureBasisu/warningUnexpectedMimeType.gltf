@@ -1,0 +1,46 @@
+{
+  "asset": {
+    "version": "2.0"
+  },
+  "extensionsUsed": [
+    "KHR_texture_basisu"
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "extensions": {
+        "KHR_texture_basisu": {
+          "source": 1
+        }
+      }
+    }
+  ],
+  "images": [
+    {
+      "mimeType": "image/png",
+      "bufferView": 0
+    },
+    {
+      "mimeType": "image/jpeg",
+      "bufferView": 1
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 100
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 100,
+      "byteLength": 200
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 300,
+      "uri": "data:application/octet-stream;base64,AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAAAAAAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAAAAAAIA/AAABAAIAAQADAAIA"
+    }
+  ]
+}
